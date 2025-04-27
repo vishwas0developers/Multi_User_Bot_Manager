@@ -1,0 +1,21 @@
+# Ignore the virtual environment directory
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment variables
+.env
+
+# Flask specific
+instance/
+flask_session/
+
+# Logs
+*.log
+
+# User uploads and downloads
+uploads/
+apps/**/downloads/
+apps/**/*.zip

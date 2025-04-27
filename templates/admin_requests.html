@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upgrade Requests</title>
+    <style>
+        table { width: 100%; border-collapse: collapse; margin-top: 30px; }
+        th, td { padding: 10px; border: 1px solid #ccc; }
+        select, button { padding: 5px 10px; }
+    </style>
+</head>
+<body>
+    <h2>📥 Upgrade Requests</h2>
+    <table>
+        <tr>
+            <th>User</th>
+            <th>Email</th>
+            <th>Current → Requested</th>
+            <th>Message</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+        {% for req in requests %}
+        <tr>
+            <td>{{ req.name }}</td>
+            <td>{{ req.email }}</td>
+            <td>{{ req.current_plan|capitalize }} → <b>{{ req.requested_plan|capitalize }}</b></td>
+            <td>{{ req.message }}</td>
+            <td>{{ req.created_at.strftime('%d %b %Y %H:%M') }}</td>
+            <td>{{ req.status|capitalize }}</td>
+            <td>
+                {% if req.status == 'pending' %}
+                <button onclick="updateStatus('{{ req.id }}', 'approved')">✔️ Approve</button>
+                <button onclick="updateStatus('{{ req.id }}', 'denied')">❌ Deny</button>
+                {% else %}
+                <i>{{ req.status }}</i>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <script>
+    function updateStatus(id, status) {
+        fetch("/admin/update-request", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ request_id: id, status: status })
+        })
+        .then(res => res.json())
+        .then(data => {
+            alert(data.message);
+            location.reload();
+        });
+    }
+    </script>
+</body>
+</html>

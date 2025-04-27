@@ -1,0 +1,623 @@
+[2025-04-23 13:25:09 +0000] [833566] [INFO] Starting gunicorn 23.0.0
+[2025-04-23 13:25:09 +0000] [833566] [INFO] Listening at: unix:/home/bot-ssh/htdocs/bot.online2study.in/flask_app.sock (833566)
+[2025-04-23 13:25:09 +0000] [833566] [INFO] Using worker: sync
+[2025-04-23 13:25:09 +0000] [833569] [INFO] Booting worker with pid: 833569
+[2025-04-23 13:25:09 +0000] [833570] [INFO] Booting worker with pid: 833570
+[2025-04-23 13:25:09 +0000] [833571] [INFO] Booting worker with pid: 833571
+[2025-04-23 13:25:21 +0000] [833569] [INFO] Worker exiting (pid: 833569)
+[2025-04-23 13:25:21 +0000] [833571] [INFO] Worker exiting (pid: 833571)
+[2025-04-23 13:25:21 +0000] [833566] [INFO] Handling signal: term
+[2025-04-23 13:25:21 +0000] [833570] [INFO] Worker exiting (pid: 833570)
+[2025-04-23 13:25:21 +0000] [833566] [ERROR] Worker (pid:833571) was sent SIGTERM!
+[2025-04-23 13:25:21 +0000] [833566] [ERROR] Worker (pid:833569) was sent SIGTERM!
+[2025-04-23 13:25:21 +0000] [833566] [INFO] Shutting down: Master
+[2025-04-23 13:25:22 +0000] [833694] [INFO] Starting gunicorn 23.0.0
+[2025-04-23 13:25:22 +0000] [833694] [INFO] Listening at: unix:/home/bot-ssh/htdocs/bot.online2study.in/flask_app.sock (833694)
+[2025-04-23 13:25:22 +0000] [833694] [INFO] Using worker: sync
+[2025-04-23 13:25:22 +0000] [833697] [INFO] Booting worker with pid: 833697
+[2025-04-23 13:25:22 +0000] [833698] [INFO] Booting worker with pid: 833698
+[2025-04-23 13:25:22 +0000] [833699] [INFO] Booting worker with pid: 833699
+[2025-04-23 13:32:23 +0000] [833698] [INFO] Worker exiting (pid: 833698)
+[2025-04-23 13:32:23 +0000] [833699] [INFO] Worker exiting (pid: 833699)
+[2025-04-23 13:32:23 +0000] [833697] [INFO] Worker exiting (pid: 833697)
+[2025-04-23 13:32:23 +0000] [833694] [INFO] Handling signal: term
+[2025-04-23 13:32:23 +0000] [833694] [ERROR] Worker (pid:833698) was sent SIGTERM!
+[2025-04-23 13:32:23 +0000] [833694] [ERROR] Worker (pid:833697) was sent SIGTERM!
+[2025-04-23 13:32:23 +0000] [833694] [ERROR] Worker (pid:833699) was sent SIGTERM!
+[2025-04-23 13:32:23 +0000] [833694] [INFO] Shutting down: Master
+[2025-04-23 13:32:24 +0000] [835443] [INFO] Starting gunicorn 23.0.0
+[2025-04-23 13:32:24 +0000] [835443] [INFO] Listening at: unix:/home/bot-ssh/htdocs/bot.online2study.in/flask_app.sock (835443)
+[2025-04-23 13:32:24 +0000] [835443] [INFO] Using worker: sync
+[2025-04-23 13:32:24 +0000] [835447] [INFO] Booting worker with pid: 835447
+[2025-04-23 13:32:24 +0000] [835448] [INFO] Booting worker with pid: 835448
+[2025-04-23 13:32:24 +0000] [835449] [INFO] Booting worker with pid: 835449
+[2025-04-23 14:27:47 +0000] [835447] [INFO] Worker exiting (pid: 835447)
+[2025-04-23 14:27:47 +0000] [835449] [INFO] Worker exiting (pid: 835449)
+[2025-04-23 14:27:48 +0000] [835443] [INFO] Handling signal: term
+[2025-04-23 14:27:47 +0000] [835448] [INFO] Worker exiting (pid: 835448)
+[2025-04-23 14:27:48 +0000] [835443] [ERROR] Worker (pid:835447) was sent SIGTERM!
+[2025-04-23 14:27:58 +0000] [835443] [INFO] Shutting down: Master
+[2025-04-23 14:28:03 +0000] [846584] [INFO] Starting gunicorn 23.0.0
+[2025-04-23 14:28:03 +0000] [846584] [INFO] Listening at: unix:/home/bot-ssh/htdocs/bot.online2study.in/flask_app.sock (846584)
+[2025-04-23 14:28:03 +0000] [846584] [INFO] Using worker: sync
+[2025-04-23 14:28:03 +0000] [846587] [INFO] Booting worker with pid: 846587
+[2025-04-23 14:28:03 +0000] [846588] [INFO] Booting worker with pid: 846588
+[2025-04-23 14:28:03 +0000] [846589] [INFO] Booting worker with pid: 846589
+[2025-04-23 14:28:12 +0000] [846587] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 354, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Too many connections
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/online2study-bot/htdocs/bot.online2study.in/app.py", line 613, in <module>
+    register_all_apps()  # Always call on import
+  File "/home/online2study-bot/htdocs/bot.online2study.in/app.py", line 579, in register_all_apps
+    for user in get_all_users():  # get_all_users() returns list of {id, google_id}
+  File "/home/online2study-bot/htdocs/bot.online2study.in/db_utils.py", line 35, in get_all_users
+    conn = get_db()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/db_utils.py", line 8, in get_db
+    return mysql.connector.connect(
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/abstracts.py", line 1605, in connect
+    self._open_connection()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.OperationalError: 1040 (08004): Too many connections
+[2025-04-23 14:28:12 +0000] [846587] [INFO] Worker exiting (pid: 846587)
+[2025-04-23 14:28:12 +0000] [846588] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 354, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Too many connections
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/online2study-bot/htdocs/bot.online2study.in/app.py", line 613, in <module>
+    register_all_apps()  # Always call on import
+  File "/home/online2study-bot/htdocs/bot.online2study.in/app.py", line 579, in register_all_apps
+    for user in get_all_users():  # get_all_users() returns list of {id, google_id}
+  File "/home/online2study-bot/htdocs/bot.online2study.in/db_utils.py", line 35, in get_all_users
+    conn = get_db()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/db_utils.py", line 8, in get_db
+    return mysql.connector.connect(
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/abstracts.py", line 1605, in connect
+    self._open_connection()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.OperationalError: 1040 (08004): Too many connections
+[2025-04-23 14:28:12 +0000] [846588] [INFO] Worker exiting (pid: 846588)
+[2025-04-23 14:28:12 +0000] [846589] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 354, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Too many connections
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/online2study-bot/htdocs/bot.online2study.in/app.py", line 613, in <module>
+    register_all_apps()  # Always call on import
+  File "/home/online2study-bot/htdocs/bot.online2study.in/app.py", line 579, in register_all_apps
+    for user in get_all_users():  # get_all_users() returns list of {id, google_id}
+  File "/home/online2study-bot/htdocs/bot.online2study.in/db_utils.py", line 35, in get_all_users
+    conn = get_db()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/db_utils.py", line 8, in get_db
+    return mysql.connector.connect(
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/abstracts.py", line 1605, in connect
+    self._open_connection()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.OperationalError: 1040 (08004): Too many connections
+[2025-04-23 14:28:12 +0000] [846589] [INFO] Worker exiting (pid: 846589)
+[2025-04-23 14:28:14 +0000] [846584] [ERROR] Worker (pid:846589) exited with code 3
+[2025-04-23 14:28:14 +0000] [846584] [ERROR] Worker (pid:846587) was sent SIGTERM!
+[2025-04-23 14:28:14 +0000] [846584] [ERROR] Worker (pid:846588) was sent SIGTERM!
+[2025-04-23 14:28:14 +0000] [846584] [ERROR] Shutting down: Master
+[2025-04-23 14:28:14 +0000] [846584] [ERROR] Reason: Worker failed to boot.
+[2025-04-23 14:28:16 +0000] [846603] [INFO] Starting gunicorn 23.0.0
+[2025-04-23 14:28:16 +0000] [846603] [INFO] Listening at: unix:/home/bot-ssh/htdocs/bot.online2study.in/flask_app.sock (846603)
+[2025-04-23 14:28:16 +0000] [846603] [INFO] Using worker: sync
+[2025-04-23 14:28:16 +0000] [846606] [INFO] Booting worker with pid: 846606
+[2025-04-23 14:28:16 +0000] [846608] [INFO] Booting worker with pid: 846608
+[2025-04-23 14:28:16 +0000] [846607] [INFO] Booting worker with pid: 846607
+[2025-04-23 14:28:22 +0000] [846607] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 354, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Too many connections
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/online2study-bot/htdocs/bot.online2study.in/app.py", line 613, in <module>
+    register_all_apps()  # Always call on import
+  File "/home/online2study-bot/htdocs/bot.online2study.in/app.py", line 579, in register_all_apps
+    for user in get_all_users():  # get_all_users() returns list of {id, google_id}
+  File "/home/online2study-bot/htdocs/bot.online2study.in/db_utils.py", line 35, in get_all_users
+    conn = get_db()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/db_utils.py", line 8, in get_db
+    return mysql.connector.connect(
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/abstracts.py", line 1605, in connect
+    self._open_connection()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.OperationalError: 1040 (08004): Too many connections
+[2025-04-23 14:28:22 +0000] [846607] [INFO] Worker exiting (pid: 846607)
+[2025-04-23 14:28:23 +0000] [846608] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 354, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Too many connections
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/online2study-bot/htdocs/bot.online2study.in/app.py", line 613, in <module>
+    register_all_apps()  # Always call on import
+  File "/home/online2study-bot/htdocs/bot.online2study.in/app.py", line 579, in register_all_apps
+    for user in get_all_users():  # get_all_users() returns list of {id, google_id}
+  File "/home/online2study-bot/htdocs/bot.online2study.in/db_utils.py", line 35, in get_all_users
+    conn = get_db()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/db_utils.py", line 8, in get_db
+    return mysql.connector.connect(
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/abstracts.py", line 1605, in connect
+    self._open_connection()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.DatabaseError: 1040 (HY000): Too many connections
+[2025-04-23 14:28:23 +0000] [846608] [INFO] Worker exiting (pid: 846608)
+[2025-04-23 14:28:24 +0000] [846606] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 354, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Too many connections
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/online2study-bot/htdocs/bot.online2study.in/app.py", line 613, in <module>
+    register_all_apps()  # Always call on import
+  File "/home/online2study-bot/htdocs/bot.online2study.in/app.py", line 579, in register_all_apps
+    for user in get_all_users():  # get_all_users() returns list of {id, google_id}
+  File "/home/online2study-bot/htdocs/bot.online2study.in/db_utils.py", line 35, in get_all_users
+    conn = get_db()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/db_utils.py", line 8, in get_db
+    return mysql.connector.connect(
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/abstracts.py", line 1605, in connect
+    self._open_connection()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.OperationalError: 1040 (08004): Too many connections
+[2025-04-23 14:28:24 +0000] [846606] [INFO] Worker exiting (pid: 846606)
+[2025-04-23 14:28:26 +0000] [846603] [ERROR] Worker (pid:846607) exited with code 3
+[2025-04-23 14:28:26 +0000] [846603] [ERROR] Worker (pid:846608) was sent SIGTERM!
+[2025-04-23 14:28:26 +0000] [846603] [ERROR] Worker (pid:846606) exited with code 3
+[2025-04-23 14:28:28 +0000] [846623] [INFO] Starting gunicorn 23.0.0
+[2025-04-23 14:28:28 +0000] [846623] [INFO] Listening at: unix:/home/bot-ssh/htdocs/bot.online2study.in/flask_app.sock (846623)
+[2025-04-23 14:28:28 +0000] [846623] [INFO] Using worker: sync
+[2025-04-23 14:28:28 +0000] [846624] [INFO] Booting worker with pid: 846624
+[2025-04-23 14:28:28 +0000] [846625] [INFO] Booting worker with pid: 846625
+[2025-04-23 14:28:28 +0000] [846626] [INFO] Booting worker with pid: 846626
+[2025-04-23 14:28:36 +0000] [846624] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 354, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Too many connections
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/online2study-bot/htdocs/bot.online2study.in/app.py", line 613, in <module>
+    register_all_apps()  # Always call on import
+  File "/home/online2study-bot/htdocs/bot.online2study.in/app.py", line 579, in register_all_apps
+    for user in get_all_users():  # get_all_users() returns list of {id, google_id}
+  File "/home/online2study-bot/htdocs/bot.online2study.in/db_utils.py", line 35, in get_all_users
+    conn = get_db()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/db_utils.py", line 8, in get_db
+    return mysql.connector.connect(
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/abstracts.py", line 1605, in connect
+    self._open_connection()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.OperationalError: 1040 (08004): Too many connections
+[2025-04-23 14:28:36 +0000] [846624] [INFO] Worker exiting (pid: 846624)
+[2025-04-23 14:28:38 +0000] [846623] [ERROR] Worker (pid:846624) exited with code 3
+[2025-04-23 14:28:38 +0000] [846625] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 354, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Too many connections
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/online2study-bot/htdocs/bot.online2study.in/app.py", line 613, in <module>
+    register_all_apps()  # Always call on import
+  File "/home/online2study-bot/htdocs/bot.online2study.in/app.py", line 579, in register_all_apps
+    for user in get_all_users():  # get_all_users() returns list of {id, google_id}
+  File "/home/online2study-bot/htdocs/bot.online2study.in/db_utils.py", line 35, in get_all_users
+    conn = get_db()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/db_utils.py", line 8, in get_db
+    return mysql.connector.connect(
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/abstracts.py", line 1605, in connect
+    self._open_connection()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.DatabaseError: 1040 (HY000): Too many connections
+[2025-04-23 14:28:38 +0000] [846625] [INFO] Worker exiting (pid: 846625)
+[2025-04-23 14:28:38 +0000] [846626] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 354, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Too many connections
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/online2study-bot/htdocs/bot.online2study.in/app.py", line 613, in <module>
+    register_all_apps()  # Always call on import
+  File "/home/online2study-bot/htdocs/bot.online2study.in/app.py", line 579, in register_all_apps
+    for user in get_all_users():  # get_all_users() returns list of {id, google_id}
+  File "/home/online2study-bot/htdocs/bot.online2study.in/db_utils.py", line 35, in get_all_users
+    conn = get_db()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/db_utils.py", line 8, in get_db
+    return mysql.connector.connect(
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/abstracts.py", line 1605, in connect
+    self._open_connection()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.OperationalError: 1040 (08004): Too many connections
+[2025-04-23 14:28:39 +0000] [846626] [INFO] Worker exiting (pid: 846626)
+[2025-04-23 14:28:41 +0000] [846623] [ERROR] Worker (pid:846625) exited with code 3
+[2025-04-23 14:28:44 +0000] [846641] [INFO] Starting gunicorn 23.0.0
+[2025-04-23 14:28:44 +0000] [846641] [INFO] Listening at: unix:/home/bot-ssh/htdocs/bot.online2study.in/flask_app.sock (846641)
+[2025-04-23 14:28:44 +0000] [846641] [INFO] Using worker: sync
+[2025-04-23 14:28:44 +0000] [846644] [INFO] Booting worker with pid: 846644
+[2025-04-23 14:28:44 +0000] [846645] [INFO] Booting worker with pid: 846645
+[2025-04-23 14:28:44 +0000] [846646] [INFO] Booting worker with pid: 846646
+[2025-04-23 14:28:54 +0000] [846646] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 354, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Too many connections
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/online2study-bot/htdocs/bot.online2study.in/app.py", line 613, in <module>
+    register_all_apps()  # Always call on import
+  File "/home/online2study-bot/htdocs/bot.online2study.in/app.py", line 579, in register_all_apps
+    for user in get_all_users():  # get_all_users() returns list of {id, google_id}
+  File "/home/online2study-bot/htdocs/bot.online2study.in/db_utils.py", line 35, in get_all_users
+    conn = get_db()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/db_utils.py", line 8, in get_db
+    return mysql.connector.connect(
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/abstracts.py", line 1605, in connect
+    self._open_connection()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.DatabaseError: 1040 (HY000): Too many connections
+[2025-04-23 14:28:54 +0000] [846646] [INFO] Worker exiting (pid: 846646)
+[2025-04-23 14:28:56 +0000] [846644] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 354, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Too many connections
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/online2study-bot/htdocs/bot.online2study.in/app.py", line 613, in <module>
+    register_all_apps()  # Always call on import
+  File "/home/online2study-bot/htdocs/bot.online2study.in/app.py", line 579, in register_all_apps
+    for user in get_all_users():  # get_all_users() returns list of {id, google_id}
+  File "/home/online2study-bot/htdocs/bot.online2study.in/db_utils.py", line 35, in get_all_users
+    conn = get_db()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/db_utils.py", line 8, in get_db
+    return mysql.connector.connect(
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/abstracts.py", line 1605, in connect
+    self._open_connection()
+  File "/home/online2study-bot/htdocs/bot.online2study.in/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.OperationalError: 1040 (08004): Too many connections
+[2025-04-23 14:28:56 +0000] [846644] [INFO] Worker exiting (pid: 846644)
+[2025-04-23 14:28:59 +0000] [846641] [ERROR] Worker (pid:846644) exited with code 3
+[2025-04-23 14:28:59 +0000] [846641] [ERROR] Worker (pid:846646) was sent SIGTERM!
+[2025-04-23 14:29:09 +0000] [846645] [INFO] Worker exiting (pid: 846645)
+[2025-04-23 14:29:12 +0000] [846641] [ERROR] Shutting down: Master
+[2025-04-23 14:29:12 +0000] [846641] [ERROR] Reason: Worker failed to boot.
+[2025-04-23 14:29:14 +0000] [846679] [INFO] Starting gunicorn 23.0.0
+[2025-04-23 14:29:14 +0000] [846679] [INFO] Listening at: unix:/home/bot-ssh/htdocs/bot.online2study.in/flask_app.sock (846679)
+[2025-04-23 14:29:14 +0000] [846679] [INFO] Using worker: sync
+[2025-04-23 14:29:14 +0000] [846681] [INFO] Booting worker with pid: 846681
+[2025-04-23 14:29:14 +0000] [846684] [INFO] Booting worker with pid: 846684
+[2025-04-23 14:29:14 +0000] [846682] [INFO] Booting worker with pid: 846682

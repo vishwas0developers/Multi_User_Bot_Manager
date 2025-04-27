@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact & Upgrade</title>
+    {% if error %}
+    <p style="color: red;"><b>{{ error }}</b></p>
+{% elif success %}
+    <p style="color: green;"><b>Your request has been submitted. We’ll contact you soon!</b></p>
+{% endif %}
+
+    <style>
+        .container { max-width: 600px; margin: 50px auto; font-family: Arial; }
+        form { display: flex; flex-direction: column; gap: 15px; }
+        textarea, input, select { padding: 10px; width: 100%; border-radius: 5px; border: 1px solid #ccc; }
+        button { background: #007bff; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>📩 Request Plan Upgrade</h2>
+
+        {% if success %}
+        <p style="color: green;"><b>Your request has been submitted. We’ll contact you soon!</b></p>
+        {% endif %}
+
+        <form method="POST">
+            <label for="requested_plan">Select Desired Plan:</label>
+            <select name="requested_plan" required>
+                <option value="">-- Select --</option>
+                {% if current_plan == "free" %}
+                <option value="silver">Silver</option>
+                {% endif %}
+                <option value="gold">Gold</option>
+            </select>
+
+            <label for="message">Why do you want to upgrade?</label>
+            <textarea name="message" rows="4" required></textarea>
+
+            <button type="submit">Send Request</button>
+        </form>
+    </div>
+</body>
+</html>

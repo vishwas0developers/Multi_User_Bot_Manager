@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bot Management Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: #f7f7f7;
+    }
+    .top-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .top-header-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .top-header h1 {
+      font-size: 22px;
+      margin: 0;
+      color: #333;
+    }
+    .plan-info {
+      font-size: 15px;
+      color: #666;
+    }
+    .top-header-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .upload-btn, .profile-btn {
+      background: #007BFF;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      border: none;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+    }
+    .profile-menu {
+      position: relative;
+    }
+    .profile-dropdown {
+      display: none;
+      position: absolute;
+      right: 0;
+      background: white;
+      min-width: 170px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      z-index: 10;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .profile-dropdown a {
+      display: block;
+      padding: 12px 16px;
+      color: #333;
+      text-decoration: none;
+    }
+    .profile-dropdown a:hover {
+      background: #f2f2f2;
+    }
+    .profile-menu:hover .profile-dropdown {
+      display: block;
+    }
+
+    #button-container {
+      padding: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .card {
+      background: #fff;
+      width: 200px;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      position: relative;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .image-container img {
+      width: 100%;
+      height: 120px;
+      object-fit: contain;
+    }
+    .edit-icon, .delete-icon {
+      position: absolute;
+      top: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .edit-icon { left: 10px; color: #3498db; }
+    .delete-icon { right: 10px; color: #e74c3c; }
+
+    .close-btn {
+      position: absolute;
+      right: 15px;
+      top: 10px;
+      cursor: pointer;
+      font-size: 22px;
+      color: #999;
+    }
+
+    .upgrade-button {
+      background-color: #007bff;
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      padding: 12px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+/* Modal Overlay */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal Box */
+.modal-content {
+  background: #fff;
+  padding: 30px 25px;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Modal Heading */
+.modal-content h2 {
+  margin-top: 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  cursor: pointer;
+  font-size: 24px;
+  color: #aaa;
+  transition: color 0.2s;
+}
+.close-btn:hover {
+  color: #333;
+}
+
+/* Form Structure */
+#uploadForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-group {
+  width: 90%;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  color: #555;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.form-group input[type="file"],
+.form-group input[type="text"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Upload Button */
+#uploadButton {
+  width: 90%;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#uploadButton:hover {
+  background: #218838;
+}
+
+/* Upload Status */
+#uploadStatus {
+  margin-top: 15px;
+  text-align: center;
+  display: none;
+}
+
+#uploadStatus img {
+  width: 25px;
+  margin-bottom: 10px;
+  display: none;
+}
+
+#uploadMessage {
+  font-size: 14px;
+  color: #555;
+}
+
+  </style>
+  
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="top-header">
+  <div class="top-header-left">
+    <h1>📦 Bot Management Dashboard</h1>
+    <div class="plan-info">| Plan: <b>{{ user_plan|capitalize }}</b> | Apps Used: {{ app_count }} / {% if is_infinite %}∞{% else %}{{ plan_limit }}{% endif %}</div>
+  </div>
+  <div class="top-header-right">
+    <button class="upload-btn" onclick="openUploadModal()">➕ Upload App</button>
+
+    <div class="profile-menu">
+      <button class="profile-btn">
+        {{ user_email.split('@')[0]|capitalize }} <i class="fas fa-caret-down"></i>
+      </button>
+      <div class="profile-dropdown">
+        {% if user_plan != 'gold' %}
+        <a href="{{ url_for('user_bp.select_plan') }}">Upgrade Plan</a>
+        {% endif %}
+        <a href="{{ url_for('user_bp.logout') }}">Logout</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BUTTONS / APPS -->
+<div id="button-container">
+  {% if apps %}
+    {% for app in apps %}
+    <div class="card" onclick="runScript('{{ app.folder_name }}')">
+      <i class="fas fa-pencil-alt edit-icon" onclick="editScript(event, '{{ app.folder_name }}', '{{ app.button_name }}')"></i>
+      <i class="fas fa-trash delete-icon" onclick="confirmDelete(event, '{{ app.folder_name }}')"></i>
+      <div class="image-container">
+        <img src="{{ app.image_url }}" alt="{{ app.button_name }}">
+      </div>
+      <h3>{{ app.button_name }}</h3>
+    </div>
+    {% endfor %}
+  {% else %}
+    <p>No apps uploaded yet. Click "Upload App" to start!</p>
+  {% endif %}
+</div>
+
+<!-- Upload Modal -->
+<div id="uploadModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeUploadModal()">&times;</span>
+    <h2>Upload New App</h2>
+
+    <form id="uploadForm" action="{{ url_for('bot_bp.upload_app') }}" method="post" enctype="multipart/form-data">
+      
+      <div class="form-group">
+        <label for="zip_file">ZIP File:</label>
+        <input type="file" id="zip_file" name="zip_file" accept=".zip" required>
+      </div>
+
+      <div class="form-group">
+        <label for="image">Icon Image (Optional):</label>
+        <input type="file" id="image" name="image" accept="image/*">
+      </div>
+
+      <div class="form-group">
+        <label for="button_name">Button Name:</label>
+        <input type="text" id="button_name" name="button_name" required>
+      </div>
+
+      <button type="submit" id="uploadButton">Upload App</button>
+
+      <div id="uploadStatus">
+        <img id="loadingSpinner" src="{{ url_for('static', filename='images/loading.gif') }}" alt="Loading...">
+        <p id="uploadMessage"></p>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+<!-- Upgrade Limit Modal -->
+<div id="upgradeModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeUpgradeModal()">&times;</span>
+    <h2 style="color: #dc3545;"><i class="fas fa-exclamation-triangle"></i> App Limit Reached</h2>
+    <p id="upgradeMessage" style="margin-bottom: 20px; font-size: 16px;">Your current plan limit has been reached.</p>
+    <button id="upgradePlanButton" class="upgrade-button">
+      <i class="fas fa-arrow-up"></i> Upgrade Plan
+    </button>
+    <button onclick="closeUpgradeModal()" style="background-color: #6c757d; color: white; font-weight: bold; border: none; cursor: pointer; width: 100%; padding: 12px; border-radius: 5px;">
+      Close
+    </button>
+  </div>
+</div>
+
+<script>
+function openUploadModal() {
+  document.getElementById("uploadModal").style.display = "flex";
+}
+function closeUploadModal() {
+  document.getElementById("uploadModal").style.display = "none";
+}
+
+function confirmDelete(event, folder) {
+    event.stopPropagation();
+    if (confirm("Delete app " + folder + "?")) {
+        fetch("/bot/delete/" + folder, { method: "POST" })
+            .then(res => res.json())
+            .then(data => {
+                alert(data.message);
+                location.reload();
+            })
+            .catch(err => {
+                alert("Failed to delete: " + err);
+            });
+    }
+}
+
+function editScript(event, folder, name) {
+  event.stopPropagation();
+  alert('Edit function called for ' + name + '.'); // Implement Edit Modal separately
+}
+
+function runScript(folder) {
+  window.open("/u/{{ user_id }}/" + folder, "_blank");
+}
+
+// Add functions for the new upgrade modal
+function showUpgradeModal(message) {
+  document.getElementById("upgradeMessage").textContent = message; // Set the specific message from backend
+  document.getElementById("upgradeModal").style.display = "flex";
+}
+
+function closeUpgradeModal() {
+  document.getElementById("upgradeModal").style.display = "none";
+}
+
+// Handle Upload Form Submission with Fetch API
+const uploadForm = document.getElementById('uploadForm');
+if (uploadForm) {
+  uploadForm.addEventListener('submit', async (event) => {
+    event.preventDefault(); // Prevent default form submission
+
+    const formData = new FormData(uploadForm);
+    // Corrected selector for the submit button inside the form
+    const submitButton = uploadForm.querySelector('button[type="submit"]');
+    const originalButtonText = submitButton.textContent;
+    const uploadStatusDiv = document.getElementById('uploadStatus');
+    const uploadMessage = document.getElementById('uploadMessage');
+    const loadingSpinner = document.getElementById('loadingSpinner');
+
+    // Show loading state
+    submitButton.textContent = 'Uploading...'; // Change text on the correct button
+    submitButton.disabled = true;
+    uploadMessage.textContent = 'Uploading and processing... Please wait.';
+    loadingSpinner.style.display = 'inline-block';
+    uploadStatusDiv.style.display = 'block';
+    uploadStatusDiv.style.color = 'orange';
+
+    try {
+      const response = await fetch(uploadForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json' // Expect JSON response
+        }
+      });
+
+      const result = await response.json(); // Always expect JSON
+
+      if (response.ok) {
+        uploadMessage.textContent = result.message || 'App uploaded successfully!';
+        uploadStatusDiv.style.color = 'green';
+        // Close the modal and reload after a short delay
+        closeUploadModal();
+        setTimeout(() => window.location.reload(), 1500); // Reload after 1.5 seconds
+      } else {
+        // Handle errors (4xx, 5xx)
+        if (result.error === 'limit_reached') {
+          closeUploadModal(); // Close upload modal first
+          showUpgradeModal(result.message); // Show upgrade modal
+          // Reset button state here as we are not reloading
+          submitButton.textContent = originalButtonText;
+          submitButton.disabled = false;
+          loadingSpinner.style.display = 'none';
+          uploadStatusDiv.style.display = 'none'; // Hide status area
+        } else {
+          // Show standard alert for other errors within the modal
+          uploadMessage.textContent = `Error: ${result.message || 'An unknown error occurred.'}`;
+          uploadStatusDiv.style.color = 'red';
+          // Reset button state here as well
+          submitButton.textContent = originalButtonText;
+          submitButton.disabled = false;
+          loadingSpinner.style.display = 'none';
+        }
+      }
+    } catch (error) {
+      console.error('Upload fetch error:', error);
+      uploadMessage.textContent = 'An unexpected network error occurred. Please try again.';
+      uploadStatusDiv.style.color = 'red';
+      // Reset button state on catch
+      submitButton.textContent = originalButtonText;
+      submitButton.disabled = false;
+      loadingSpinner.style.display = 'none';
+    }
+    // Removed finally block as button state is reset in error/catch paths now
+  });
+}
+
+// Add event listener for the upgrade plan button
+const upgradePlanButton = document.getElementById('upgradePlanButton');
+if (upgradePlanButton) {
+  upgradePlanButton.addEventListener('click', () => {
+    location.href = '{{ url_for('user_bp.select_plan') }}';
+  });
+}
+</script>
+
+</body>
+</html>
+
+<!-- उदाहरण: प्रीमियम प्लान के लिए बटन -->
+{% if current_user.plan_type == 'free' %}
+    <p>Upgrade to Premium for more features!</p>
+    <a href="{{ url_for('user_bp.initiate_payment', plan_name='premium') }}" class="btn btn-success">Upgrade to Premium (₹500)</a>
+{% elif current_user.plan_type == 'premium' %}
+    <p>You are currently on the Premium Plan.</p>
+    <p>Expires on: {{ current_user.plan_expiry_date.strftime('%Y-%m-%d') if current_user.plan_expiry_date else 'N/A' }}</p>
+    <!-- चाहें तो रिन्यू का बटन जोड़ सकते हैं -->
+{% endif %}
+
+<!-- मौजूदा सेलेक्ट प्लान बटन (यदि आवश्यक हो) -->
+<!-- पहले यह था: location.href = '{{ url_for('user_bp.select_plan') }}'; -->
+<!-- अब आप इसे सीधे पेमेंट इनिशिएट करने वाले लिंक से बदल सकते हैं, या select_plan पेज को पेमेंट लॉजिक से जोड़ सकते हैं -->

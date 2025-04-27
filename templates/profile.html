@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Profile</title>
+    <style>
+        .container { max-width: 600px; margin: 50px auto; font-family: Arial; }
+        .card { background: #f9f9f9; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .info { margin-bottom: 20px; }
+        .info b { color: #333; }
+        .upgrade { background: #fff3cd; padding: 10px; border: 1px solid #ffeeba; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2>👤 My Profile</h2>
+            <div class="info">
+                <p><b>Name:</b> {{ name }}</p>
+                <p><b>Email:</b> {{ email }}</p>
+                <p><b>Plan:</b> {{ user_plan|capitalize }}</p>
+                <p><b>App Usage:</b> {{ app_count }} / {% if plan_limit == float('inf') %}∞{% else %}{{ plan_limit }}{% endif %}</p>
+            </div>
+
+            {% if user_plan != 'gold' %}
+            <div class="upgrade">
+                <h4>🚀 Upgrade Your Plan</h4>
+                <p>To upload more apps or access more resources, consider upgrading:</p>
+                <ul>
+                    {% if user_plan == 'free' %}
+                        <li>🔄 Upgrade to <b>Silver</b>: 10 apps</li>
+                        <li>💼 Upgrade to <b>Gold</b>: Unlimited apps + premium resources</li>
+                    {% elif user_plan == 'silver' %}
+                        <li>💼 Upgrade to <b>Gold</b>: Unlimited apps + priority access</li>
+                    {% endif %}
+                </ul>
+                <a href="/contact" style="color:blue; text-decoration:underline;">Contact support to upgrade</a>
+            </div>
+            {% else %}
+            <p>✅ You’re on the highest plan.</p>
+            {% endif %}
+        </div>
+    </div>
+    {% if upgrade_request %}
+    <div style="margin-top:20px; border:1px solid #ccc; padding:10px; border-radius:5px;">
+        <h4>📤 Last Upgrade Request</h4>
+        <p><b>Requested Plan:</b> {{ upgrade_request.requested_plan|capitalize }}</p>
+        <p><b>Status:</b>
+            {% if upgrade_request.status == 'pending' %}
+                <span style="color:orange;">⏳ Pending</span>
+            {% elif upgrade_request.status == 'approved' %}
+                <span style="color:green;">✅ Approved</span>
+            {% elif upgrade_request.status == 'denied' %}
+                <span style="color:red;">❌ Denied</span>
+            {% endif %}
+        </p>
+        <p><b>Date:</b> {{ upgrade_request.created_at.strftime('%d %b %Y %H:%M') }}</p>
+    </div>
+{% endif %}
+
+</body>
+</html>

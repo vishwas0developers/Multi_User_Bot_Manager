@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Complete Payment</title>
+    <!-- Bootstrap या अन्य CSS जोड़ें -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Complete Your Payment</h2>
+    <p>Please click the button below to complete your payment for the {{ plan_name }} plan.</p>
+
+    <!-- पेमेंट बटन -->
+    <button id="rzp-button1" class="btn btn-primary">Pay Now</button>
+
+    <!-- Razorpay चेकआउट स्क्रिप्ट -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+        var options = {
+            "key": "{{ payment_data.key }}", // आपकी Key ID
+            "amount": "{{ payment_data.amount }}", // राशि पैसे में
+            "currency": "{{ payment_data.currency }}",
+            "name": "{{ payment_data.name }}",
+            "description": "{{ payment_data.description }}",
+            "order_id": "{{ payment_data.order_id }}", // बैकएंड से प्राप्त ऑर्डर ID
+            "callback_url": "{{ payment_data.callback_url }}", // सफलता कॉलबैक URL
+            "prefill": {
+                "name": "{{ payment_data.prefill.name }}",
+                "email": "{{ payment_data.prefill.email }}"
+                // "contact": "{{ payment_data.prefill.contact }}" // यदि उपलब्ध हो
+            },
+            "notes": {
+                "plan_name": "{{ plan_name }}" // प्लान का नाम नोट्स में भेजें (वैकल्पिक)
+            },
+            "theme": {
+                "color": "{{ payment_data.theme.color }}"
+            },
+            // पेमेंट सफल होने पर रीडायरेक्ट के बजाय हैंडलर का उपयोग करने के लिए:
+            // "handler": function (response){
+            //     // यहाँ आप AJAX का उपयोग करके सर्वर पर वेरिफिकेशन भेज सकते हैं
+            //     // alert(response.razorpay_payment_id);
+            //     // alert(response.razorpay_order_id);
+            //     // alert(response.razorpay_signature);
+            //     // वेरिफिकेशन के लिए फॉर्म सबमिट करें
+            //     var form = document.createElement('form');
+            //     form.method = 'POST';
+            //     form.action = "{{ payment_data.callback_url }}"; // या एक अलग वेरिफिकेशन एंडपॉइंट
+
+            //     var hiddenFieldPaymentId = document.createElement('input');
+            //     hiddenFieldPaymentId.type = 'hidden';
+            //     hiddenFieldPaymentId.name = 'razorpay_payment_id';
+            //     hiddenFieldPaymentId.value = response.razorpay_payment_id;
+            //     form.appendChild(hiddenFieldPaymentId);
+
+            //     var hiddenFieldOrderId = document.createElement('input');
+            //     hiddenFieldOrderId.type = 'hidden';
+            //     hiddenFieldOrderId.name = 'razorpay_order_id';
+            //     hiddenFieldOrderId.value = response.razorpay_order_id;
+            //     form.appendChild(hiddenFieldOrderId);
+
+            //     var hiddenFieldSignature = document.createElement('input');
+            //     hiddenFieldSignature.type = 'hidden';
+            //     hiddenFieldSignature.name = 'razorpay_signature';
+            //     hiddenFieldSignature.value = response.razorpay_signature;
+            //     form.appendChild(hiddenFieldSignature);
+
+            //     var hiddenFieldPlanName = document.createElement('input');
+            //     hiddenFieldPlanName.type = 'hidden';
+            //     hiddenFieldPlanName.name = 'plan_name';
+            //     hiddenFieldPlanName.value = "{{ plan_name }}";
+            //     form.appendChild(hiddenFieldPlanName);
+
+
+            //     document.body.appendChild(form);
+            //     form.submit();
+            // },
+            "modal": {
+                "ondismiss": function(){
+                    console.log('Checkout form closed');
+                    // यूजर को सूचित करें या डैशबोर्ड पर रीडायरेक्ट करें
+                    window.location.href = "{{ url_for('user_bp.dashboard') }}"; // या प्लान चयन पेज
+                }
+            }
+        };
+        var rzp1 = new Razorpay(options);
+
+        // पेमेंट विफल होने पर इवेंट लिस्नर (वैकल्पिक)
+        rzp1.on('payment.failed', function (response){
+                alert("Payment Failed: " + response.error.description + " (Code: " + response.error.code + ")");
+                // आप यूजर को डैशबोर्ड या एरर पेज पर भेज सकते हैं
+                // window.location.href = "{{ url_for('user_bp.dashboard') }}";
+        });
+
+
+        document.getElementById('rzp-button1').onclick = function(e){
+            rzp1.open();
+            e.preventDefault();
+        }
+
+        // पेज लोड होते ही चेकआउट खोलें (वैकल्पिक)
+        // window.onload = function() {
+        //     rzp1.open();
+        // };
+    </script>
+    <!-- CSRF प्रोटेक्शन के लिए हिडन फील्ड (यदि Flask-WTF उपयोग कर रहे हैं) -->
+    <!-- <form method="post" id="redirectForm" action="{{ payment_data.callback_url }}"> -->
+        <!-- <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/> -->
+        <!-- अन्य आवश्यक हिडन फ़ील्ड्स यहाँ जोड़ें यदि handler का उपयोग नहीं कर रहे हैं -->
+        <!-- <input type="hidden" name="plan_name" value="{{ plan_name }}"> -->
+    <!-- </form> -->
+
+</div>
+</body>
+</html>
