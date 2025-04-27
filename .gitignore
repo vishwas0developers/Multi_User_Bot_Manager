@@ -1,5 +1,8 @@
-# Ignore the virtual environment directory
-venv/
+# Ignore the virtual environment directory at root
+/venv/
+
+# Ignore everything inside the apps/ directory
+/apps/*
 
 # Python cache
 __pycache__/
@@ -17,6 +20,6 @@ flask_session/
 
 # User uploads and downloads
 uploads/
-apps/**/downloads/
-apps/**/*.zip
-apps/**.py
+
+# Optional: Ignore zip files inside apps/ (already covered by /apps/*)
+/apps/**/*.zip
