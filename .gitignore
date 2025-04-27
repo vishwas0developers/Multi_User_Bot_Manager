@@ -19,3 +19,4 @@ flask_session/
 uploads/
 apps/**/downloads/
 apps/**/*.zip
+apps/**.py
