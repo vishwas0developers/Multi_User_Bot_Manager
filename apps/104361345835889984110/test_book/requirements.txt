@@ -1,8 +1,0 @@
-Flask
-Werkzeug
-beautifulsoup4
-requests
-html5lib
-lxml
-flask-session
-openpyxl
